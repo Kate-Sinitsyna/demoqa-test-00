@@ -8,7 +8,7 @@ public class SimpleJUnitTest {
 
     @BeforeAll
     static void beforeAll(){
-        System.out.println("###    beforeAll\n");
+        System.out.println("###    beforeAll2\n");
     }
 
     @BeforeEach
