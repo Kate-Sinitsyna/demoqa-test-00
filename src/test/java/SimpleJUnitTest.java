@@ -17,6 +17,12 @@ public class SimpleJUnitTest {
         result = getResult();
     }
 
+    @BeforeEach
+    void beforeEach() {
+        System.out.println("###    beforeEach");
+        result = getResult();
+    }
+
     @Test
     void firstTest() {
         System.out.println("###    firstTest");
