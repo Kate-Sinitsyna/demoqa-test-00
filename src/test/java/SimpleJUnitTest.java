@@ -41,6 +41,25 @@ public class SimpleJUnitTest {
         Assertions.assertTrue(result>2);
     }
 
+    @Test
+    void thirdTest() {
+        System.out.println("###    thirdTest");
+        Assertions.assertTrue(result>2);
+    }
+
+    @Test
+    void thirdTest() {
+        System.out.println("###    thirdTest");
+        Assertions.assertTrue(result>2);
+    }
+
+
+    @Test
+    void thirdTest() {
+        System.out.println("###    thirdTest");
+        Assertions.assertTrue(result>2);
+    }
+
     private int getResult() {
         return 3;
     }
