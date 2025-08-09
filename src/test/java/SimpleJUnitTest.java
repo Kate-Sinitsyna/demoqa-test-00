@@ -8,13 +8,7 @@ public class SimpleJUnitTest {
 
     @BeforeAll
     static void beforeAll(){
-        System.out.println("###    beforeAll1\n");
-    }
-
-    @BeforeEach
-    void beforeEach() {
-        System.out.println("###    beforeEach");
-        result = getResult();
+        System.out.println("###    beforeAll2\n");
     }
 
     @BeforeEach
@@ -32,12 +26,6 @@ public class SimpleJUnitTest {
     @Test
     void secondTest() {
         System.out.println("###    secondTest");
-        Assertions.assertTrue(result>2);
-    }
-
-    @Test
-    void thirdTest() {
-        System.out.println("###    thirdTest");
         Assertions.assertTrue(result>2);
     }
 
