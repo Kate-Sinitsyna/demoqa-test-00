@@ -1,10 +1,12 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTest {
 
@@ -15,7 +17,7 @@ public class TextBoxTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
-        Configuration.pageLoadTimeout = 6000;
+        //Configuration.pageLoadTimeout = 1000;
     }
 
     @Test
@@ -37,13 +39,32 @@ public class TextBoxTest {
 
     @Test
     void fillFormTestHW() {
-        open("https://demoqa.com/automation-practice-form");
-        $("=").setValue("");
-        $("=").setValue("");
-        $("=").setValue("");
-        $("=").setValue("");
-        $("=").click();
 
-        $("=").shouldHave(text(""));
+        open("/automation-practice-form");
+        $("#firstName").setValue("Alex");
+        $("#userEmail").setValue("alex@gmail.com");
+        $("#lastName").setValue("Saegn");
+        $("label[for='gender-radio-2']").click();
+        $("#userNumber").setValue("7846586867");
+        //$("#dateOfBirthInput").click();
+        $("#subjectsInput").setValue("123");
+        $("label[for='hobbies-checkbox-1']").click();
+        $("#uploadPicture").uploadFromClasspath("example.jpeg");
+        $("#currentAddress").setValue("11250 E STATE ROUTE 69 DEWEY AZ 86327-4422 USA");
+        $("#state").click();
+        $("#react-select-3-input").setValue("NCR");
+        $("#city").click();
+        $(byText("Delhi")).shouldBe(visible).click();
+        //$("#react-select-4-input").shouldBe(editable);
+       // $("#react-select-4-input").setValue("Delhi");
+        $("#submit").click();
+
+
     }
 }
+
+    @Test
+    void fillFormTestHW2() {
+        open("/automation-practice-form");
+        closeWindow();
+    }
