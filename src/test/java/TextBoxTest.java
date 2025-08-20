@@ -58,10 +58,11 @@ public class TextBoxTest {
        // $("#react-select-4-input").setValue("Delhi");
         $("#submit").click();
     }
-}
 
     @Test
     void fillFormTestHW2() {
         open("/automation-practice-form");
         closeWindow();
     }
+}
+
