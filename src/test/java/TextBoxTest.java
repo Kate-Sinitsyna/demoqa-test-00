@@ -39,7 +39,6 @@ public class TextBoxTest {
 
     @Test
     void fillFormTestHW() {
-
         open("/automation-practice-form");
         $("#firstName").setValue("Alex");
         $("#userEmail").setValue("alex@gmail.com");
@@ -58,8 +57,6 @@ public class TextBoxTest {
         //$("#react-select-4-input").shouldBe(editable);
        // $("#react-select-4-input").setValue("Delhi");
         $("#submit").click();
-
-
     }
 }
 
