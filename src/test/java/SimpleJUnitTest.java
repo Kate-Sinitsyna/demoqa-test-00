@@ -7,18 +7,12 @@ public class SimpleJUnitTest {
     int result;
 
     @BeforeAll
-    static void beforeAll(){
-        System.out.println("###    beforeAll1\n");
+    static void beforeAll(){                         //общая конфигурация перед запусками всех тестов
+        System.out.println("###    beforeAll2\n");
     }
 
     @BeforeEach
-    void beforeEach() {
-        System.out.println("###    beforeEach");
-        result = getResult();
-    }
-
-    @BeforeEach
-    void beforeEach() {
+    void beforeEach() {                            //запускается общий код перед каждым новым тестом
         System.out.println("###    beforeEach");
         result = getResult();
     }
@@ -41,17 +35,11 @@ public class SimpleJUnitTest {
         Assertions.assertTrue(result>2);
     }
 
-    @Test
-    void thirdTest() {
-        System.out.println("###    thirdTest");
-        Assertions.assertTrue(result>2);
-    }
-
     private int getResult() {
         return 3;
     }
 
-    @AfterEach
+    @AfterEach                 //запускается общий код после каждого нового теста
     void AfterEach() {
         System.out.println("###    AfterEach\n");
         result = 0;
