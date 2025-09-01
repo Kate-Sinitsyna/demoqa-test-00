@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -38,7 +39,7 @@ public class TextBoxTest {
     }
 
     @Test
-    void fillFormTestHW() {
+    void fillPracticeFormTest() {
         open("/automation-practice-form");
         $("#firstName").setValue("Alex");
         $("#userEmail").setValue("alex@gmail.com");
@@ -62,7 +63,19 @@ public class TextBoxTest {
     @Test
     void fillFormTestHW2() {
         open("/automation-practice-form");
-        closeWindow();
+        //$(byText("Other")).click();
+        $("#react-select-3-input").setValue("NCR").click();
+        $("#react-select-4-input").click();
+
+       // $("div").find(byText("Music")).click();
+        //$(byTagAndText("id", "hobbies-checkbox-3")).click();
+        //closeWindow();
     }
+
+    @Test
+    <string>
+    void name1() {
+        string date = "2025-08-26";
+        assertEq
 }
 
