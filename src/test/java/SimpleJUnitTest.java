@@ -7,12 +7,12 @@ public class SimpleJUnitTest {
     int result;
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll(){                         //общая конфигурация перед запусками всех тестов
         System.out.println("###    beforeAll2\n");
     }
 
     @BeforeEach
-    void beforeEach() {
+    void beforeEach() {                            //запускается общий код перед каждым новым тестом
         System.out.println("###    beforeEach");
         result = getResult();
     }
@@ -39,7 +39,7 @@ public class SimpleJUnitTest {
         return 3;
     }
 
-    @AfterEach
+    @AfterEach                 //запускается общий код после каждого нового теста
     void AfterEach() {
         System.out.println("###    AfterEach\n");
         result = 0;

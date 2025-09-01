@@ -13,7 +13,7 @@ public class TextBoxTest {
 
 
     @BeforeAll
-    static void beforeAll() {
+    static void setConfig() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
@@ -41,6 +41,8 @@ public class TextBoxTest {
     @Test
     void fillPracticeFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
         $("#firstName").setValue("Alex");
         $("#userEmail").setValue("alex@gmail.com");
         $("#lastName").setValue("Saegn");
@@ -63,19 +65,14 @@ public class TextBoxTest {
     @Test
     void fillFormTestHW2() {
         open("/automation-practice-form");
+        $("#dateOfBirthInput").click();
         //$(byText("Other")).click();
-        $("#react-select-3-input").setValue("NCR").click();
-        $("#react-select-4-input").click();
+       // $("#react-select-3-input").setValue("NCR").click();
+        //$("#react-select-4-input").click();
 
        // $("div").find(byText("Music")).click();
         //$(byTagAndText("id", "hobbies-checkbox-3")).click();
         //closeWindow();
     }
-
-    @Test
-    <string>
-    void name1() {
-        string date = "2025-08-26";
-        assertEq
 }
 
